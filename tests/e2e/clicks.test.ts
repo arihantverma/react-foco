@@ -1,6 +1,6 @@
 import puppeteer, { Browser } from 'puppeteer';
 import { ClicksPage } from './ClicksPage';
-import { ComponentActions } from '../../stories/index.stories';
+import { ComponentActions } from '../../stories/types';
 
 let browser: Browser;
 let clicksPage: ClicksPage;

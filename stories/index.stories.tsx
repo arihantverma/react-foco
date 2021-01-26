@@ -1,19 +1,13 @@
 import * as React from 'react';
 
-import { storiesOf } from '@storybook/react';
-
 import Foco from '../src';
 import { TestElements } from './TestElements';
+import { ComponentActions } from './types';
 
-storiesOf('Foco', module).add('clicks_and_focuses', () => <DemoComponent />);
+export default { title: 'Foco' };
 
-export enum ComponentActions {
-  None = 'None',
-  ClickInside = 'ClickInside',
-  ClickOutside = 'ClickOutside',
-  FocusInside = 'FocusInside',
-  FocusOutside = 'FocusOutside'
-}
+export const clicks_and_focuses = () => <DemoComponent />;
+// clicks_and_focuses.storyName = 'Clicks and Focuses'
 
 class DemoComponent extends React.Component {
   public state = {

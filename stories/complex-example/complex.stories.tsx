@@ -1,13 +1,12 @@
 import * as React from 'react';
 
-import { storiesOf } from '@storybook/react';
-
 import Foco from '../../src';
 import { Tooltip } from './Tooltip';
 
-storiesOf('Tooltip', module)
-  .add('sample', () => <DemoScene count={1} />)
-  .add('with_scroll', () => <DemoScene count={20} />);
+export default { title: 'Tooltip' };
+
+export const sample = () => <DemoScene count={1} />;
+export const with_scroll = () => <DemoScene count={20} />;
 
 const DemoScene = ({ count = 0 }: { count: number }) => (
   <>
@@ -24,7 +23,9 @@ const DemoScene = ({ count = 0 }: { count: number }) => (
         }}
       >
         <div style={{ margin: -1 }}>
-          {getUsers(count).map((x, i) => <Item name={x} key={i} />)}
+          {getUsers(count).map((x, i) => (
+            <Item name={x} key={i} />
+          ))}
         </div>
       </div>
       <div style={{ maxWidth: 460, marginLeft: 20 }}>
