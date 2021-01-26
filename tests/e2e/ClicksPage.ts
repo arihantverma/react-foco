@@ -6,22 +6,22 @@ export class ClicksPage {
 
   public async open() {
     await this.page.goto(
-      'http://localhost:6006/iframe.html?selectedKind=Foco&selectedStory=clicks_and_focuses'
+      'http://localhost:6006/iframe.html?id=foco--clicks-and-focuses&viewMode=story'
     );
   }
 
-  public getClicksStatus(): Promise<string> {
+  public getClicksStatus(): Promise<string | null> {
     return this.page.$eval(
       getSelectorByTestID(TestElements.ClickStatusNode),
       node => node.textContent
-    );
+    ) as Promise<string>;
   }
 
-  public getFocusStatus(): Promise<string> {
+  public getFocusStatus(): Promise<string | null> {
     return this.page.$eval(
       getSelectorByTestID(TestElements.FocusStatusNode),
       node => node.textContent
-    );
+    ) as Promise<string>;
   }
 
   public clickInside() {
